@@ -20,6 +20,8 @@ type User {
     startDate: String
     salary: Int
     profileBio: String
+    rank: Int
+
 }
 
 type Auth {

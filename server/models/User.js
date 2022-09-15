@@ -91,6 +91,10 @@ const userSchema = new Schema(
             type: String,
             requied: false
           },
+          rank: {
+            type: Number,
+            default: 1
+          }
           //a favorite employees button? if we have time!
           //starredEmployees { ty}
     }
