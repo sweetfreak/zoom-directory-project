@@ -49,6 +49,7 @@ const userSchema = new Schema(
           employeeID: {
             type: String,
             required: true,
+            unique: true
           },
           zoomMeetingID: {
             type: Number,
@@ -61,7 +62,7 @@ const userSchema = new Schema(
           },
           department: {
             type: String,
-            required: true
+            required: false
           },
           team: {
             type: String,
@@ -80,6 +81,12 @@ const userSchema = new Schema(
             required: false,
             maxlength: 500
           },
+          phoneNumber: {
+            type: String,
+            required: false,
+            unique: true,
+            //match: ,
+          },  
           profilePic: {
             type: String,
             requied: false
