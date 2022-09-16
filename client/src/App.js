@@ -15,6 +15,11 @@ import Header from "./components/Header/Header";
 // import Navbar from "./components/NavBar";
 // import Signup from "./components/Signup";
 
+// const {loading, data} = useQuery(asdhakjdhas)
+// const [getDept, {called, loading, data}] = useLazyQuery(sadjhfakjfd)
+
+//<button onClick={getDept()}/>
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });

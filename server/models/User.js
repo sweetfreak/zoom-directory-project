@@ -1,101 +1,119 @@
-const {schema, model, Schema} = require ('mongoose');
-const bcrypt = require('bcrypt')
+const { model, Schema } = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const userSchema = new Schema(
-    {
-        firstName: {
-            type: String,
-            required: true,
-            unique: true,
-            trim: true
-          },
-          lastName: {
-            type: String,
-            required: true,
-            unique: true,
-            trim: true
-          },
-          email: {
-            type: String,
-            required: true,
-            unique: true,
-            match: [/.+@.+\..+/, 'Must match an email address!']
-          },
-          password: {
-            type: String,
-            required: true,
-            minlength: 5
-          },
-          employeeUsername: {
-            type: String,
-            required:true,
-            //make it be the first letter of firstName + lastName
-            //default:
-          },
-          startDate: {
-            type: Date,
-            required: true,
-            default: Date.now,
-            //need to adjust the dateFormat from 21.6 to work for us.
-            //get: timestamp => dateFormat(timestamp)
-          },
-          organization: {
-            type: String,
-            //could make required: true if we add multiple orgs
-            required: false,
-            trim: true
-          },
-          //as this would be auto-generated, is this correct?
-          employeeID: {
-            type: String,
-            required: true,
-            unique: true
-          },
-          zoomMeetingID: {
-            type: Number,
-            required: false,
-            minlength: 9
-          },
-          manager: {
-            type: String,
-            required: false,
-          },
-          department: {
-            type: String,
-            required: false
-          },
-          team: {
-            type: String,
-            required: false
-          },
-          title: {
-            type: String,
-            required: true
-          },
-          salary: {
-            type: Number,
-            required: false
-          },
-          profileBio: {
-            type: String,
-            required: false,
-            maxlength: 500
-          },
-          phoneNumber: {
-            type: String,
-            required: false,
-            unique: true,
-            //match: ,
-          },  
-          profilePic: {
-            type: String,
-            requied: false
-          },
-          rank: {
-            type: Number,
-            default: 1
-          }
-          //a favorite employees button? if we have time!
-          //starredEmployees { ty}
-    }
-)
+  {
+    firstName: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+    },
+    lastName: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      match: [/.+@.+\..+/, "Must match an email address!"],
+    },
+    password: {
+      type: String,
+      required: true,
+      minlength: 5,
+    },
+    startDate: {
+      type: Date,
+      required: true,
+      default: Date.now,
+      //need to adjust the dateFormat from 21.6 to work for us.
+      //get: timestamp => dateFormat(timestamp)
+    },
+    organization: {
+      type: String,
+      //could make required: true if we add multiple orgs
+      required: false,
+      trim: true,
+    },
+    //as this would be auto-generated, is this correct?
+    employeeID: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    zoomMeetingID: {
+      type: Number,
+      required: false,
+      minlength: 9,
+    },
+    manager: {
+      type: String,
+      required: false,
+    },
+    department: {
+      type: String,
+      required: false,
+    },
+    team: {
+      type: String,
+      required: false,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    salary: {
+      type: Number,
+      required: false,
+    },
+    profileBio: {
+      type: String,
+      required: false,
+      maxlength: 500,
+    },
+    phoneNumber: {
+      type: String,
+      required: false,
+      unique: true,
+      //match: ,
+    },
+    profilePic: {
+      type: String,
+      requied: false,
+    },
+    rank: {
+      type: Number,
+      default: 1,
+    },
+    //a favorite employees button? if we have time!
+    //starredEmployees { ty}
+  },
+  {
+    toJSON: {
+      virtuals: true,
+    },
+  }
+);
+
+// hash user password
+userSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+
+  next();
+});
+
+// custom method to compare and validate password for logging in
+userSchema.methods.isCorrectPassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+};
+
+const User = model("User", userSchema);
+
+module.exports = User;
