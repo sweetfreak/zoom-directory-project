@@ -11,6 +11,7 @@ import { setContext } from "@apollo/client/link/context";
 
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import Auth from './utils/auth';
 // import Login from "./components/Login";
 // import Navbar from "./components/NavBar";
 // import Signup from "./components/Signup";
@@ -40,11 +41,13 @@ const client = new ApolloClient({
 });
 
 function App() {
+
+  
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Header />
-        <Footer />
+        <Header/>
+        <Footer/>
       </Router>
     </ApolloProvider>
   );
