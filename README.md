@@ -36,6 +36,7 @@ npm install on main root of file
 - Yaakov Bockian
 
 - Benjamin Yeung
+  https://github.com/BenYeung4
 
 ## Tests:
 
