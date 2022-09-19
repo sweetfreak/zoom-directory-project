@@ -1,21 +1,19 @@
 const { Schema, model } = require("mongoose");
 const userSchema = require("./User");
 
-const deptSchema = new Schema(
-  {
-    name: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    description: {
-      type: String,
-      required: false,
-    },
-    employee: [userSchema],
+const deptSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+    unique: true,
   },
-);
+  description: {
+    type: String,
+    required: false,
+  },
+  employees: [userSchema],
+});
 
-const Dept = model("Dept", deptSchema);
+// const Department = model("Department", deptSchema);
 
-module.exports = Dept;
+module.exports = deptSchema;
