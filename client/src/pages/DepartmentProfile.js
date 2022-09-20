@@ -4,7 +4,7 @@ import Auth from "../utils/auth";
 import {useParams} from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import {GET_USER, GET_DEPARTMENT} from '../utils/queries';
+import {GET_USER_BASIC, GET_DEPARTMENT} from '../utils/queries';
 import auth from "../utils/auth";
 
 const DepartmentProfile = ({employees}) => {
@@ -15,7 +15,7 @@ const DepartmentProfile = ({employees}) => {
 // Need to GET list of users in the department
     const {department: name} = useParams();
 
-    const {loading, data} = useQuery(GET_USER, {variables: {department: name}})
+    const {loading, data} = useQuery(GET_USER_BASIC, {variables: {department: name}})
 
     const employee = data?.user || {}
 
@@ -37,7 +37,7 @@ const DepartmentProfile = ({employees}) => {
                         <li><p>for the {employee.team} team.</p></li>
                         <li><h4 className="name">{employee.name}</h4></li>
                         {/* this zoom stuff is incorrect */}
-                        <li><a href="https://us05web.zoom.us/j/${employee.zoomMeetingID}" alt='Start Zoom Call'><button className="call-btn">Call {employee.name} </button></a> </li>
+                        {/* <li><a href="https://us05web.zoom.us/j/${employee.zoomMeetingID}" alt='Start Zoom Call'><button className="call-btn">Call {employee.name} </button></a> </li> */}
                     </ul>
                 </div>
             ))}
@@ -51,7 +51,7 @@ const DepartmentProfile = ({employees}) => {
                         <li><p>for the {employee.team} team.</p></li>
                         <li><h4 className="name">{employee.name}</h4></li>
                         {/* this zoom stuff is incorrect */}
-                        <li><a href="https://us05web.zoom.us/j/${employee.zoomMeetingID}" alt='Start Zoom Call'><button className="call-btn">Call {employee.name} </button></a> </li>
+                        {/* <li><a href="https://us05web.zoom.us/j/${employee.zoomMeetingID}" alt='Start Zoom Call'><button className="call-btn">Call {employee.name} </button></a> </li> */}
                     </ul>
                 </div>
             ))}             
@@ -65,7 +65,7 @@ const DepartmentProfile = ({employees}) => {
                         <li><p>for the {employee.team} team.</p></li>
                         <li><h4 className="name">{employee.name}</h4></li>
                         {/* this zoom stuff is incorrect */}
-                        <li><a href="https://us05web.zoom.us/j/${employee.zoomMeetingID}" alt='Start Zoom Call'><button className="call-btn">Call {employee.name} </button></a> </li>
+                        {/* <li><a href="https://us05web.zoom.us/j/${employee.zoomMeetingID}" alt='Start Zoom Call'><button className="call-btn">Call {employee.name} </button></a> </li> */}
                     </ul>
                 </div>
             ))}             
@@ -79,7 +79,7 @@ const DepartmentProfile = ({employees}) => {
                         <li><p>for the {employee.team} team.</p></li>
                         <li><h4 className="name">{employee.name}</h4></li>
                         {/* this zoom stuff is incorrect */}
-                        <li><a href="https://us05web.zoom.us/j/${employee.zoomMeetingID}" alt='Start Zoom Call'><button className="call-btn">Call {employee.name} </button></a> </li>
+                        {/* <li><a href="https://us05web.zoom.us/j/${employee.zoomMeetingID}" alt='Start Zoom Call'><button className="call-btn">Call {employee.name} </button></a> </li> */}
                     </ul>
                 </div>
             ))}             
