@@ -5,23 +5,36 @@ import React from "react";
 // import SignUpForm from "./Signup";
 // import LoginForm from "./Login";
 // import Footer from "./Footer";
+import SearchTool from "../SearchTool/SearchTool"
 
-// import Auth from "../utils/auth";
+import Auth from "../../utils/auth";
 
 function Navbar(props) {
+
+  const loggedIn = Auth.loggedIn();
+
   return (
     <nav className="navbar">
-      <a href="/" className="site-title ">
-        Zoom Directory
-      </a>
-      
-      <ul>
-        <li>
-          <a href="#Signup"> Signup </a>
-        </li>
-        <li>
-          <a href="#Login"> Login </a>
-        </li>
+      <ul>  
+        {!loggedIn ? (
+        <div>
+          <li>
+            <a href="#Signup"> Signup </a>
+          </li>
+          <li>
+            <a href="#Login"> Login </a>
+          </li> 
+        </div>  
+        ) : (
+          <div>
+            <li>
+              <a href="#Logout">Logout</a>
+            </li>
+            <li>
+              <SearchTool/>
+            </li>
+          </div>
+        )}
       </ul>
     </nav>
   );

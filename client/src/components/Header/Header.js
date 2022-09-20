@@ -2,15 +2,16 @@ import React, { useState } from "react";
 
 // import { Link } from "react-router-dom";
 // import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
-// import SignUpForm from "../Signup/Signup";
-// import LoginForm from "../Login/Login";
+import auth from "../../utils/auth";
 import Navbar from "../Nav/NavBar";
-
-function Header() {
+import SearchTool from "../SearchTool/SearchTool";
+function Header(props) {
   //current page
   const [currentPage, handlePageChange] = useState("Login");
 
-  const renderPage = () => {
+  const loggedIn = auth.loggedIn();
+
+  // const renderPage = () => {
     // switch (currentPage) {
     //   case "Login":
     //     return <LoginForm></LoginForm>;
@@ -19,14 +20,21 @@ function Header() {
     //   default:
     //     return <LoginForm></LoginForm>;
     // }
-  };
+  // };
 
   return (
     <div>
       <header>
-        <Navbar currentPage={currentPage} handlePageChange={handlePageChange} />
+      <a href="/" className="site-title ">
+        Zoom Directory for {/* company name*/}
+      </a>
+      <Navbar/>
+      {loggedIn && (
+        <div><SearchTool/></div>
+      )}
+        {/* <Navbar currentPage={currentPage} handlePageChange={handlePageChange} /> */}
       </header>
-      <div>{renderPage()}</div>
+     
     </div>
   );
 }

@@ -11,10 +11,12 @@ import { setContext } from "@apollo/client/link/context";
 
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import Auth from './utils/auth';
-// import Login from "./components/Login";
-// import Navbar from "./components/NavBar";
-// import Signup from "./components/Signup";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import UserProfile from "./pages/UserProfile";
+import DepartmentProfile from "./pages/DepartmentProfile";
+import NoMatch from "./pages/NoMatch";
 
 // const {loading, data} = useQuery(asdhakjdhas)
 // const [getDept, {called, loading, data}] = useLazyQuery(sadjhfakjfd)
@@ -41,12 +43,39 @@ const client = new ApolloClient({
 });
 
 function App() {
-
+ 
   
   return (
     <ApolloProvider client={client}>
       <Router>
         <Header/>
+          <Routes>
+          <Route 
+                path="/" 
+                element={<Home />} 
+              />
+              <Route 
+               path="/login" 
+                element={<Login />} 
+              />
+              <Route 
+                path="/signup" 
+                element={<Signup />} 
+              />
+              <Route 
+               path="/user" 
+                element={<UserProfile />} 
+              />
+              <Route 
+                path="/department" 
+                element={<DepartmentProfile />} 
+              />
+              <Route 
+                path="*" 
+                element={<NoMatch />} 
+              />
+            
+          </Routes>
         <Footer/>
       </Router>
     </ApolloProvider>

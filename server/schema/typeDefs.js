@@ -40,6 +40,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
+    
     addUser(
       firstName: String!
       lastName: String!
@@ -57,6 +58,7 @@ const typeDefs = gql`
       rank: Int!
       password: String!
     ): User
+
     updateUser(
       firstName: String!
       lastName: String!
@@ -71,7 +73,9 @@ const typeDefs = gql`
       rank: Int!
       password: String!
     ): User
+
     login(email: String!, password: String!): Auth
+
     deleteUser(
       firstName: String!
       lastName: String!
