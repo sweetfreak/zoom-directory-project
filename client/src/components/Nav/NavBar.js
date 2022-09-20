@@ -13,6 +13,11 @@ function Navbar(props) {
 
   const loggedIn = Auth.loggedIn();
 
+  const logout = event => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
   return (
     <nav className="navbar">
       <ul>  
@@ -28,7 +33,9 @@ function Navbar(props) {
         ) : (
           <div>
             <li>
-              <a href="#Logout">Logout</a>
+              <a href="/" onClick={logout}>
+                Logout
+              </a>
             </li>
             <li>
               <SearchTool/>
