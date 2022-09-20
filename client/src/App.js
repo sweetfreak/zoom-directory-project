@@ -43,40 +43,19 @@ const client = new ApolloClient({
 });
 
 function App() {
- 
-  
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Header/>
-          <Routes>
-          <Route 
-                path="/" 
-                element={<Home />} 
-              />
-              <Route 
-               path="/login" 
-                element={<Login />} 
-              />
-              <Route 
-                path="/signup" 
-                element={<Signup />} 
-              />
-              <Route 
-               path="/user" 
-                element={<UserProfile />} 
-              />
-              <Route 
-                path="/department" 
-                element={<DepartmentProfile />} 
-              />
-              <Route 
-                path="*" 
-                element={<NoMatch />} 
-              />
-            
-          </Routes>
-        <Footer/>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} component={Login} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/user" element={<UserProfile />} />
+          <Route path="/department" element={<DepartmentProfile />} />
+          <Route path="*" element={<NoMatch />} />
+        </Routes>
+        <Footer />
       </Router>
     </ApolloProvider>
   );
