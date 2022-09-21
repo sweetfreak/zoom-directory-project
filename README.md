@@ -32,6 +32,7 @@ npm install on main root of file
   https://github.com/kenng8891
 
 - Muhammad Humayun Azam
+  https://github.com/coding291
 
 - Yaakov Bockian
 
