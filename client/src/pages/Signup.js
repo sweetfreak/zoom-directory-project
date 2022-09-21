@@ -12,7 +12,7 @@ import adduser from "../images/add-user.png";
 const SignupForm = () => {
   // set initial form state
   const [userFormData, setUserFormData] = useState({
-    username: "",
+    // username: "",
     email: "",
     password: "",
   });
@@ -43,7 +43,7 @@ const SignupForm = () => {
     }
 
     setUserFormData({
-      username: "",
+      // username: "",
       email: "",
       password: "",
     });
@@ -64,7 +64,7 @@ const SignupForm = () => {
             Something went wrong with your signup!
           </Alert>
           <h1>Signup Page</h1>
-          <Form.Group>
+          {/* <Form.Group>
             <img src={adduser} alt="addUser" className="addUser" />
             <Form.Label htmlFor="username">Username</Form.Label>
             <Form.Control
@@ -78,7 +78,7 @@ const SignupForm = () => {
             <Form.Control.Feedback type="invalid">
               Username is required!
             </Form.Control.Feedback>
-          </Form.Group>
+          </Form.Group> */}
 
           <Form.Group>
             <img src={email} alt="email" className="email" />
@@ -114,7 +114,7 @@ const SignupForm = () => {
           <Button
             disabled={
               !(
-                userFormData.username &&
+                // userFormData.username &&
                 userFormData.email &&
                 userFormData.password
               )
