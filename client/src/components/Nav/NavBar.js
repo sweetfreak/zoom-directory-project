@@ -24,10 +24,10 @@ function Navbar(props) {
         {!loggedIn ? (
         <div>
           <li>
-            <a href="#Signup"> Signup </a>
+            <a href="Signup"> Signup </a>
           </li>
           <li>
-            <a href="#Login"> Login </a>
+            <a href="Login"> Login </a>
           </li> 
         </div>  
         ) : (

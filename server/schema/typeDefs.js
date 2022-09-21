@@ -74,8 +74,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
 
     deleteUser(
-      firstName: String!
-      lastName: String!
+      name: String!
       email: String!
       employeeID: String!
       zoomMeetingID: Int!

@@ -3,7 +3,6 @@ import gql from "graphql-tag";
 export const ADD_USER = gql`
   mutation addUser(
     $name: String
-    $employeeUsername: String
     $email: String
     $employeeID: String
     $zoomMeetingID: Int
@@ -19,7 +18,6 @@ export const ADD_USER = gql`
   ) {
     addUser(
       name: $name
-      employeeUsername: $employeeUsername
       email: $email
       employeeID: $employeeID
       zoomMeetingID: $zoomMeetingID
@@ -36,7 +34,7 @@ export const ADD_USER = gql`
       token
       user {
         _id
-        username
+        email
         rank
       }
     }
@@ -49,7 +47,7 @@ export const LOGIN_USER = gql`
       token
       user {
         _id
-        username
+        email
         rank
       }
     }
@@ -59,7 +57,6 @@ export const LOGIN_USER = gql`
 export const UPDATE_USER =gql`
   mutation updateUser(
     $name: String
-    $employeeUsername: String
     $email: String
     $employeeID: String
     $zoomMeetingID: Int
@@ -75,7 +72,6 @@ export const UPDATE_USER =gql`
   ){
     updateUser(
       name: $name
-      employeeUsername: $employeeUsername
       email: $email
       employeeID: $employeeID
       zoomMeetingID: $zoomMeetingID
@@ -95,7 +91,6 @@ export const UPDATE_USER =gql`
 export const DELETE_USER = gql`
   mutation deleteUser(
     $name: String
-    $employeeUsername: String
     $email: String
     $employeeID: String
     $zoomMeetingID: Int
@@ -111,7 +106,6 @@ export const DELETE_USER = gql`
   ) {
     deleteUser(
       name: $name
-      employeeUsername: $employeeUsername
       email: $email
       employeeID: $employeeID
       zoomMeetingID: $zoomMeetingID
@@ -127,6 +121,6 @@ export const DELETE_USER = gql`
     )
   }
   {
-    username
+    email
   }
 `;
