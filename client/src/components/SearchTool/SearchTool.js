@@ -1,8 +1,9 @@
+//here we impoer react
 import React from "react";
 
 
 
-
+//here we created the function which will allow the user to choose the department
 function SearchTool() {
     return ( 
         <label>Choose Department:

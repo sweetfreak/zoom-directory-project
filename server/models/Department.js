@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 const User1 = require("./User");
-
+//here we created the schema for department
 const deptSchema = new Schema({
   name: {
     type: String,
