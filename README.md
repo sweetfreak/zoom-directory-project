@@ -27,12 +27,13 @@ npm install on main root of file
   https://github.com/sweetfreak
 
 - Jeremiah Vega
+  https://github.com/jmvega316
 
 - Kenny Ng
   https://github.com/kenng8891
 
 - Muhammad Humayun Azam
-  https://github.com/coding291
+  https://github.com/Coding291
 
 - Yaakov Bockian
 
