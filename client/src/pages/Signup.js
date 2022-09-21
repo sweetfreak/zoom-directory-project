@@ -111,6 +111,7 @@ const SignupForm = () => {
               Password is required!
             </Form.Control.Feedback>
           </Form.Group>
+          <br />
           <Button
             disabled={
               !(

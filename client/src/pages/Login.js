@@ -89,6 +89,7 @@ const LoginForm = () => {
               Password is required!
             </Form.Control.Feedback>
           </Form.Group>
+          <br />
           <Button
             disabled={!(userFormData.email && userFormData.password)}
             type="submit"

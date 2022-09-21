@@ -89,6 +89,7 @@ Form.Group{
   padding: 14px 0 0 25px;
 } */
 
+/*button*/
 Button{
   width: 380px;
   height: 50px;
@@ -97,4 +98,12 @@ Button{
   color: white;
   font-size: 25px;
   border: none;
+  cursor: pointer;
+}
+
+Button:hover{
+  background: purple;
+  opacity: 0.3;
+  transform: scale(.8);
+  transition-duration: 0.5s;
 }
