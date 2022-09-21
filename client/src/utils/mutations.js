@@ -18,7 +18,7 @@ export const ADD_USER = gql`
     $rank: Int
   ) {
     addUser(
-      name: $firstName
+      name: $name
       employeeUsername: $employeeUsername
       email: $email
       employeeID: $employeeID
@@ -72,7 +72,24 @@ export const UPDATE_USER =gql`
     $salary: Int
     $profileBio: String
     $rank: Int
-  )
+  ){
+    updateUser(
+      name: $name
+      employeeUsername: $employeeUsername
+      email: $email
+      employeeID: $employeeID
+      zoomMeetingID: $zoomMeetingID
+      manager: $manager
+      organization: $organization
+      department: $department
+      team: $team
+      title: $title
+      startDate: $startDate
+      salary: $salary
+      profileBio: $profileBio
+      rank: $rank
+    )
+  }
 `;
 
 export const DELETE_USER = gql`
@@ -93,7 +110,7 @@ export const DELETE_USER = gql`
     $rank: Int
   ) {
     deleteUser(
-      name: $firstName
+      name: $name
       employeeUsername: $employeeUsername
       email: $email
       employeeID: $employeeID
