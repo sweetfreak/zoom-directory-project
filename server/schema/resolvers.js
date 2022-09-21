@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Department } = require("../models");
+const { User1, Sector2 } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -7,7 +7,7 @@ const resolvers = {
     me: async (parent, args, context) => {
       if (context.user) {
         //using employeeID and not an ID created by the system. maybe it should be _id though?
-        const userData = await User.findOne({
+        const userData = await User1.findOne({
           employeeID: context.user.employeeID,
         }).select("-__v -password");
         //if starred employees, add here
@@ -15,12 +15,12 @@ const resolvers = {
       }
       throw new AuthenticationError("no user logged in");
     },
-    employee: async (parent, { employeeUsername }) => {
-      return User.findOne({ username }).select("-__v -password");
+    employee: async (parent, { employeeID }) => {
+      return User1.findOne({ employeeID }).select("-__v -password");
     },
     //does department have to be a schema type and have its own model?
     departments: async () => {
-      return await Department.findAll();
+      return await Sector2.find();
     },
     deptEmployees: async (parent, { department }) => {
       const params = {};
@@ -34,7 +34,7 @@ const resolvers = {
   },
   Mutation: {
     addUser: async (parent, args) => {
-      const user = await User.create(args);
+      const user = await User1.create(args);
       const token = signToken(user);
 
       return { token, user };
@@ -49,7 +49,7 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+      const user = await User1.findOne({ email });
 
       if (!user) {
         throw new AuthenticationError("Incorrect credentials");
@@ -67,7 +67,7 @@ const resolvers = {
     },
     deleteUser: async (parent, args, context) => {
       if (context.user) {
-        const updateUser = await User.findOneAndUpdate(
+        const updateUser = await User1.findOneAndUpdate(
           { employeeID: context.user.employeeID },
           { $pull: { deptEmployees: { employeeID: args.employeeID } } },
           { new: true }

@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const userSchema = require("./User");
+const User1 = require("./User");
 
 const deptSchema = new Schema({
   name: {
@@ -11,9 +11,8 @@ const deptSchema = new Schema({
     type: String,
     required: false,
   },
-  employees: [userSchema],
 });
 
-// const Department = model("Department", deptSchema);
+const Sector2 = model("Sector2", deptSchema);
 
-module.exports = deptSchema;
+module.exports = Sector2;
