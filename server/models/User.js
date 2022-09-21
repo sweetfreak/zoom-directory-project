@@ -6,13 +6,11 @@ const userSchema = new Schema(
     name: {
       type: String,
       required: true,
-      unique: true,
       trim: true,
     },
     email: {
       type: String,
       required: true,
-      unique: true,
       match: [/.+@.+\..+/, "Must match an email address!"],
     },
     password: {
@@ -37,7 +35,6 @@ const userSchema = new Schema(
     employeeID: {
       type: String,
       required: true,
-      unique: true,
     },
     zoomMeetingID: {
       type: Number,
@@ -72,7 +69,6 @@ const userSchema = new Schema(
     phoneNumber: {
       type: String,
       required: false,
-      unique: true,
       //match: ,
     },
     profilePic: {
@@ -83,8 +79,6 @@ const userSchema = new Schema(
       type: Number,
       default: 1,
     },
-    //a favorite employees button? if we have time!
-    //starredEmployees { ty}
   },
   {
     toJSON: {
@@ -108,6 +102,6 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-// const User = model("User", userSchema);
+const User1 = model("User1", userSchema);
 
-module.exports = userSchema;
+module.exports = User1, userSchema

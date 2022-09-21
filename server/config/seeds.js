@@ -1,10 +1,10 @@
 const db = require("./connection");
-const { Departments, Users } = require("../models");
+const { Sector2, User1 } = require("../models");
 
 db.once("open", async () => {
-  await Departments.deleteMany();
+  await Sector2.deleteMany({});
 
-  const DepartmentList = await Departments.insertMany([
+  const DepartmentList = await Sector2.insertMany([
     { name: "Advertising" },
     { name: "HR" },
     { name: "Finance" },
@@ -13,9 +13,9 @@ db.once("open", async () => {
 
   console.log("depts seeded");
 
-  await Users.deleteMany();
+  await User1.deleteMany({});
 
-  const userList = await Users.insertMany([
+  const userList = await User1.insertMany([
     {
       name: "Clark Kent",
       email: "Clark.Kent@p3ltd.com",
@@ -147,7 +147,7 @@ db.once("open", async () => {
       password: "P1nkisthebest",
     },
     {
-      Name: "Jack Kirby",
+      name: "Jack Kirby",
       email: "JK1950@p3ltd.com",
       employeeID: 31000,
       zoomMeetingID: 4575393480,
@@ -163,7 +163,7 @@ db.once("open", async () => {
       password: "Marvel",
     },
     {
-      Name: "Spongebob Squarepants",
+      name: "Spongebob Squarepants",
       email: "jellyfish@p3ltd.com",
       employeeID: 31040,
       zoomMeetingID: 4575393480,
@@ -179,15 +179,15 @@ db.once("open", async () => {
       password: "Krusty",
     },
     {
-      Name: "Bob Builder",
+      name: "Bob Builder",
       email: "Build@p3ltd.com",
       employeeID: 30057,
       zoomMeetingID: 4575393480,
       manager: "Jack Kirby",
       organization: "Project 3 LTD",
       department: "HR",
-      team: "HR Coordinator",
-      title: "Employee",
+      team: "HR",
+      title: "HR Coordinator",
       startDate: "7/2/01",
       salary: 60000,
       profileBio: "yes we can",
@@ -195,7 +195,7 @@ db.once("open", async () => {
       password: "Marvel",
     },
     {
-      Name: "Tommy Jarvis",
+      name: "Tommy Jarvis",
       email: "TJ45@p3ltd.com",
       employeeID: 41000,
       zoomMeetingID: 4575393480,
@@ -211,7 +211,7 @@ db.once("open", async () => {
       password: "Green",
     },
     {
-      Name: "Rick Grimes",
+      name: "Rick Grimes",
       email: "TWD13@p3ltd.com",
       employeeID: 1000,
       zoomMeetingID: 4575393480,
@@ -224,10 +224,10 @@ db.once("open", async () => {
       salary: 200000,
       profileBio: "We are the walking dead",
       rank: 3,
-      password: "Carl",
+      password: "Carl1232134",
     },
     {
-      Name: "luke skywalker",
+      name: "luke skywalker",
       email: "Jedi0@p3ltd.com",
       employeeID: 41020,
       zoomMeetingID: 4575393480,
@@ -243,4 +243,5 @@ db.once("open", async () => {
       password: "Light side",
     },
   ]);
+  process.exit();
 });
