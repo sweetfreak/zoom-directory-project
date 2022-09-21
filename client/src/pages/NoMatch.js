@@ -1,6 +1,19 @@
 import React from "react";
-import Auth from "../utils/auth";
+import Jumbotron from "../components/Jumbotron";
 
-const NoMatch = () => {};
+const NoMatch = () => {
+  return (
+    <div>
+      <Jumbotron>
+        <h1>404 Page Not Found</h1>
+        <h1>
+          <span role="img" aria-label="Unamused-face">
+            😒
+          </span>
+        </h1>
+      </Jumbotron>
+    </div>
+  );
+};
 
 export default NoMatch;

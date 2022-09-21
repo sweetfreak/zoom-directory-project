@@ -9,6 +9,9 @@ import Auth from "../utils/auth";
 import { useMutation } from "@apollo/react-hooks";
 import { LOGIN_USER } from "../utils/mutations";
 
+import email from "../images/email.png";
+import password from "../images/password.png";
+
 const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: "", password: "" });
   const [validated] = useState(false);
@@ -43,55 +46,60 @@ const LoginForm = () => {
   };
 
   return (
-    <>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-        <Alert
-          dismissible
-          onClose={() => setShowAlert(false)}
-          show={showAlert}
-          variant="danger"
-        >
-          Something went wrong with your login credentials!
-        </Alert>
-        <Form.Group>
-          <Form.Label htmlFor="email">Email</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Your email"
-            name="email"
-            onChange={handleInputChange}
-            value={userFormData.email}
-            required
-          />
-          <Form.Control.Feedback type="invalid">
-            Email is required!
-          </Form.Control.Feedback>
-        </Form.Group>
+    <div className="main">
+      <div className="sub-main">
+        <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+          <Alert
+            dismissible
+            onClose={() => setShowAlert(false)}
+            show={showAlert}
+            variant="danger"
+          >
+            Something went wrong with your login credentials!
+          </Alert>
+          <h1>Login Page</h1>
+          <Form.Group>
+            <img src={email} alt="email" className="email" />
+            <Form.Label htmlFor="email">Email: </Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Your email"
+              name="email"
+              onChange={handleInputChange}
+              value={userFormData.email}
+              required
+            />
+            <Form.Control.Feedback type="invalid">
+              Email is required!
+            </Form.Control.Feedback>
+          </Form.Group>
 
-        <Form.Group>
-          <Form.Label htmlFor="password">Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Your password"
-            name="password"
-            onChange={handleInputChange}
-            value={userFormData.password}
-            required
-          />
-          <Form.Control.Feedback type="invalid">
-            Password is required!
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Button
-          disabled={!(userFormData.email && userFormData.password)}
-          type="submit"
-          variant="success"
-        >
-          Submit
-        </Button>
-        {error && <div>Login failed</div>}
-      </Form>
-    </>
+          <Form.Group>
+            <img src={password} alt="password" className="password" />
+            <Form.Label htmlFor="password">Password: </Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Your password"
+              name="password"
+              onChange={handleInputChange}
+              value={userFormData.password}
+              required
+            />
+            <Form.Control.Feedback type="invalid">
+              Password is required!
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Button
+            disabled={!(userFormData.email && userFormData.password)}
+            type="submit"
+            variant="success"
+          >
+            Submit
+          </Button>
+          {error && <div>Login failed</div>}
+        </Form>
+      </div>
+    </div>
   );
 };
 
