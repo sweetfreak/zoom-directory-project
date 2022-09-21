@@ -1,12 +1,13 @@
 import React from "react";
 import Auth from "../utils/auth";
-
+//import the user params 
 import {useParams} from 'react-router-dom';
+//import the user query
 import { useQuery } from '@apollo/client';
 
 import {GET_USER_BASIC, GET_DEPARTMENT} from '../utils/queries';
 import auth from "../utils/auth";
-
+//here we created the function 
 const DepartmentProfile = ({employees}) => {
 
 //this isn't going to work because we need to either call the department's array of employees, OR get all employees and filter only the employees who are in this department.

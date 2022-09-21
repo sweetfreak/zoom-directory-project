@@ -3,7 +3,7 @@ const { Sector2, User1 } = require("../models");
 
 db.once("open", async () => {
   await Sector2.deleteMany({});
-
+ //here we created object where using insertMany method will be inserting the following departments
   const DepartmentList = await Sector2.insertMany([
     { name: "Advertising" },
     { name: "HR" },
@@ -12,9 +12,9 @@ db.once("open", async () => {
   ]);
 
   console.log("depts seeded");
-
+  //here we also give the option to delete many
   await User1.deleteMany({});
-
+//here we insert the same for userList
   const userList = await User1.insertMany([
     {
       name: "Clark Kent",
