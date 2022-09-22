@@ -25,7 +25,9 @@ function Header(props) {
   return (
     <div>
       <header className="site-title ">
-        <a href="/">EZ-Zoom</a>
+        <div class="banner">
+          <a href="/">EZ-Zoom</a>
+        </div>
         <Navbar />
         {loggedIn && (
           <div>
