@@ -31,6 +31,10 @@ const resolvers = {
 
       return await deptEmployees.find(params).populate("deptEmployees");
     },
+    allEmployees: async () => {
+      return await User1.find();
+    },
+    
   },
   Mutation: {
     addUser: async (parent, args) => {
