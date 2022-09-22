@@ -112,17 +112,11 @@ Button{
   border: none;
   cursor: pointer;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> b620a8a6a33786373a24241fdd01405b8edf9187
 Button:hover{
   background: purple;
   opacity: 0.3;
   transform: scale(.8);
   transition-duration: 0.5s;
-<<<<<<< HEAD
-=======
 }
 
 .standard {
@@ -134,5 +128,4 @@ Button:hover{
   margin: 50px 0px;
   width: 100%;
 
->>>>>>> b620a8a6a33786373a24241fdd01405b8edf9187
 }

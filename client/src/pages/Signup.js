@@ -107,9 +107,6 @@ const SignupForm = () => {
               Password is required!
             </Form.Control.Feedback>
           </Form.Group>
-<<<<<<< HEAD
-          <br />
-=======
 
           <Form.Group>
             <img src={dept} alt="dept" className="dept" />
@@ -124,7 +121,6 @@ const SignupForm = () => {
             </Dropdown>
           </Form.Group>
 
->>>>>>> 9f2a0842ffbab207bd0cce8fba8c477f9e1140bd
           <Button
             disabled={
               !(
