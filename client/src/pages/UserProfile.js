@@ -46,31 +46,38 @@ const UserProfile = (props) => {
   };
 
   return (
-    <ul>
-      <li>
-        <h4>Name: </h4>Clark Kent
-      </li>
-      <li>Title: Digital Marketer</li>
-      <li>Department: Advertising</li>
-      <li>Team: Digital</li>
-      <li>Manager: Perry White</li>
+    <center className="profile">
+      <h2>Profile</h2>
+      <h1>Clark Kent</h1>
+      <div className="user-Front-container">
+        <li>Title: Digital Marketer</li>
+        <li>Department: Advertising</li>
+        <li>Team: Digital</li>
+        <li>Manager: Perry White</li>
+      </div>
+      <br />
       <li>
         <a
           href="https://us05web.zoom.us/j/${employee.4575393480}"
           alt="Start Zoom Call"
         >
-          <button className="call-btn">Call {employee.name} </button>
+          {/*className="call-btn"*/}
+          <button>Call {employee.name} </button>
         </a>
       </li>
+      <br />
       {/* {currentUser.rank === 1 && ( */}
-      <div>
+      <div className="user-Back-container">
         <li>Salary: 90000 </li>
         <li>Employee Start Data: 11/11/2011 </li>
         <li>Employee ID: 10001</li>
-        <button onClick={handleClick}>Update Info</button>
       </div>
+      <br />
+      <button onClick={handleClick}>Update Info</button>
+      <br />
+
       {/* })} */}
-    </ul>
+    </center>
   );
 };
 

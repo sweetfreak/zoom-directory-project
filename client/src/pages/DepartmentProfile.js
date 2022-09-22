@@ -48,21 +48,21 @@ const DepartmentProfile = () => {
   }
 
   return (
-    <div>
-      Directors
+    <div className="card e-card-horizontal">
       <div className="director-card">
         {/* {employees.map(employee.rank === 1  && ( */}
-        <div>
+        <div className="content-card">
+          <h2 style={{ textAlign: "center" }}> Directors</h2>
           <ul>
             <li>
               <h3 className="title">{employee.title}</h3>
               name: Elle Woods <br></br>
               email: Elle.Woods@p3ltd.com<br></br>
               employeeID: 20000 <br></br>
-              team: "HR",<br></br>
-              title: "Director of HR-Legal",<br></br>
-              startDate: "5/5/05",<br></br>
-              profileBio: "Naturally blonde",<br></br>
+              team: HR<br></br>
+              title: Director of HR-Legal<br></br>
+              startDate: 5/5/05<br></br>
+              profileBio: Naturally blonde<br></br>
             </li>
             <a
               href="https://us05web.zoom.us/j/${employee.4575393480}"
@@ -73,10 +73,10 @@ const DepartmentProfile = () => {
           </ul>
         </div>
       </div>
-      Managers
       <div className="director-card">
         {/* {employees.map(employee.rank === 2 && ( */}
-        <div>
+        <div className="content-card">
+          <h2 style={{ textAlign: "center" }}>Managers</h2>
           <ul>
             <li>
               name: Jack Kirby<br></br>
@@ -97,20 +97,21 @@ const DepartmentProfile = () => {
           </ul>
         </div>
       </div>
-      Employees
+
       <div className="director-card">
         {/* {employees.map(employee.rank === 3 && ( */}
-        <div>
+        <div className="content-card">
+          <h2 style={{ textAlign: "center" }}>Employees</h2>
           <ul>
             <li>
-              name: "Spongebob Squarepants",<br></br>
-              email: "jellyfish@p3ltd.com",<br></br>
-              employeeID: 31040,<br></br>
-              manager: "Jack Kirby",<br></br>
-              team: "HR",<br></br>
-              title: "Employment Dpecialist",<br></br>
-              startDate: "5/4/98",<br></br>
-              profileBio: "I love krabby patties",
+              name: Spongebob Squarepants<br></br>
+              email: jellyfish@p3ltd.com<br></br>
+              employeeID: 31040<br></br>
+              manager: Jack Kirby<br></br>
+              team: HR<br></br>
+              title: Employment Dpecialist<br></br>
+              startDate: 5/4/98<br></br>
+              profileBio: I love krabby patties
             </li>
             <a
               href="https://us05web.zoom.us/j/${employee.4575393480}"

@@ -7,34 +7,33 @@ import Navbar from "../Nav/NavBar";
 import SearchTool from "../SearchTool/SearchTool";
 function Header(props) {
   //current page
-  const [currentPage, handlePageChange] = useState("Login");
+  // const [currentPage, handlePageChange] = useState("Login");
 
   const loggedIn = auth.loggedIn();
 
   // const renderPage = () => {
-    // switch (currentPage) {
-    //   case "Login":
-    //     return <LoginForm></LoginForm>;
-    //   case "Sign Up":
-    //     return <SignUpForm></SignUpForm>;
-    //   default:
-    //     return <LoginForm></LoginForm>;
-    // }
+  // switch (currentPage) {
+  //   case "Login":
+  //     return <LoginForm></LoginForm>;
+  //   case "Sign Up":
+  //     return <SignUpForm></SignUpForm>;
+  //   default:
+  //     return <LoginForm></LoginForm>;
+  // }
   // };
 
   return (
     <div>
       <header className="site-title ">
-      <a href="/" >
-        EZ-Zoom
-      </a>
-      <Navbar/>
-      {loggedIn && (
-        <div><SearchTool/></div>
-      )}
+        <a href="/">EZ-Zoom</a>
+        <Navbar />
+        {loggedIn && (
+          <div>
+            <SearchTool />
+          </div>
+        )}
         {/* <Navbar currentPage={currentPage} handlePageChange={handlePageChange} /> */}
       </header>
-     
     </div>
   );
 }

@@ -1,6 +1,6 @@
 // see SignupForm.js for comments
 import React, { useState } from "react";
-import { Form, Button, Alert } from "react-bootstrap";
+// import { Form, Button, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 // import { loginUser } from '../utils/API';
@@ -39,40 +39,51 @@ function LoginForm(props) {
   };
 
   return (
-    <div className="container my-1">
-      <Link to="/signup">← Go to Signup</Link>
-
-      <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
-          <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        {error ? (
-          <div>
-            <p className="error-text">The provided credentials are incorrect</p>
+    <div className="container main">
+      <div className="sub-main">
+        <form onSubmit={handleFormSubmit}>
+          <h1>Login</h1>
+          <div className="flex-row space-between my-2">
+            <img src={email} alt="email" className="credential" />
+            <input
+              placeholder="youremail@test.com"
+              name="email"
+              type="email"
+              id="email"
+              className="credential-entry"
+              onChange={handleChange}
+            />
           </div>
-        ) : null}
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+          <br />
+          <div className="flex-row space-between my-2">
+            <img src={password} alt="password" className="credential" />
+
+            <input
+              placeholder="******"
+              name="password"
+              type="password"
+              id="pwd"
+              className="credential-entry"
+              onChange={handleChange}
+            />
+          </div>
+          {error ? (
+            <div>
+              <p className="error-text">
+                The provided credentials are incorrect
+              </p>
+            </div>
+          ) : null}
+          <br />
+          <div className="flex-row flex-end">
+            <button type="submit">Login</button>
+          </div>
+          <br />
+          <div className="forgot-password">
+            <Link to="/signup">← Go to Signup</Link>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

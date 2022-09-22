@@ -77,41 +77,41 @@ const SignupForm = () => {
           <h1>Signup Page</h1>
 
           <Form.Group>
-            <img src={email} alt="email" className="email" />
-            <Form.Label htmlFor="email">Email</Form.Label>
+            <img src={email} alt="email" className="credential" />
             <Form.Control
               type="email"
               placeholder="Your email address"
               name="email"
+              className="credential-entry"
               onChange={handleInputChange}
               value={userFormData.email}
               required
             />
-            <Form.Control.Feedback type="invalid">
+            {/* <Form.Control.Feedback type="invalid">
               Email is required!
-            </Form.Control.Feedback>
+            </Form.Control.Feedback> */}
           </Form.Group>
-
+          <br />
           <Form.Group>
-            <img src={password} alt="password" className="password" />
-            <Form.Label htmlFor="password">Password</Form.Label>
+            <img src={password} alt="password" className="credential" />
             <Form.Control
               type="password"
               placeholder="Your password"
               name="password"
+              className="credential-entry"
               onChange={handleInputChange}
               value={userFormData.password}
               required
             />
-            <Form.Control.Feedback type="invalid">
+            {/* <Form.Control.Feedback type="invalid">
               Password is required!
-            </Form.Control.Feedback>
+            </Form.Control.Feedback> */}
           </Form.Group>
-
+          <br />
           <Form.Group>
-            <img src={dept} alt="dept" className="dept" />
             <Dropdown>
-              <label htmlFor="department">Department:</label>
+              <img src={dept} alt="dept" className="dept" />
+              <label htmlFor="department"> Department:</label>
               <select value={value} onChange={handleChange}>
                 <option value="HR">HR</option>
                 <option value="Finance">Finance</option>
@@ -120,7 +120,7 @@ const SignupForm = () => {
               </select>
             </Dropdown>
           </Form.Group>
-
+          <br />
           <Button
             disabled={
               !(
