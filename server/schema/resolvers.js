@@ -1,7 +1,7 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User1, Sector2 } = require("../models");
 const { signToken } = require("../utils/auth");
-
+//here we hve queries to check for the overall running of the program
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
