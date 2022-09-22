@@ -1,6 +1,6 @@
 const { model, Schema } = require("mongoose");
 const bcrypt = require("bcrypt");
-//here we created user schema 
+//here we created user schema
 const userSchema = new Schema(
   {
     name: {
@@ -17,6 +17,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       minlength: 5,
+      default: "corgi123",
     },
     startDate: {
       type: Date,
@@ -93,7 +94,6 @@ userSchema.pre("save", async function (next) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
-
   next();
 });
 
@@ -104,4 +104,4 @@ userSchema.methods.isCorrectPassword = async function (password) {
 
 const User1 = model("User1", userSchema);
 
-module.exports = User1, userSchema
+(module.exports = User1), userSchema;
