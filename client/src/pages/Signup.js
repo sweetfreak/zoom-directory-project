@@ -12,6 +12,7 @@ import dept from "../images/add-user.png";
 const SignupForm = () => {
   // set initial form state
   const [userFormData, setUserFormData] = useState({
+
     department: "",
     email: "",
     password: "",
@@ -43,7 +44,7 @@ const SignupForm = () => {
     }
 
     setUserFormData({
-      username: "",
+      // username: "",
       email: "",
       password: "",
     });
@@ -124,6 +125,7 @@ const SignupForm = () => {
           <Button
             disabled={
               !(
+
                 userFormData.department &&
                 userFormData.email &&
                 userFormData.password

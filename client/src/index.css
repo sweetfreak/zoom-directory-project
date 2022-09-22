@@ -39,9 +39,12 @@ html {
 }
 footer{
   background: #333;
+  position: absolute;
   color: white;
   padding: 3em;
   margin-top: auto;
+  width: 100%;
+  bottom:0;
 }
 
 .home-details-container {
@@ -97,4 +100,22 @@ Button{
   color: white;
   font-size: 25px;
   border: none;
+  cursor: pointer;
+}
+Button:hover{
+  background: purple;
+  opacity: 0.3;
+  transform: scale(.8);
+  transition-duration: 0.5s;
+}
+
+.standard {
+  display: flex
+}
+
+.home-not-logged-in {
+  text-align: center;
+  margin: 50px 0px;
+  width: 100%;
+
 }

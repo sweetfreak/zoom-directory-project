@@ -26,7 +26,7 @@ function Header(props) {
     <div>
       <header>
       <a href="/" className="site-title ">
-        Zoom Directory for {/* company name*/}
+        EZ-Zoom
       </a>
       <Navbar/>
       {loggedIn && (
