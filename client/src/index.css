@@ -17,6 +17,15 @@ code {
 html {
   height: 100%;
 }
+
+.site-title {
+  font-size:xx-large;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  background-color: lightblue;
+}
+
 /*navigation bar*/
 .navbar {
   background-color: rgb(61, 71, 204);
