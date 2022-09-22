@@ -1,10 +1,10 @@
 //from module 21
 
 const jwt = require("jsonwebtoken");
-
+//here we created the secret 
 const secret = "mysecretsshhhhh";
 const expiration = "2h";
-
+//here we module exports the auth middleware 
 module.exports = {
   authMiddleware: function ({ req }) {
     // allows token to be sent via req.body, req.query, or headers
