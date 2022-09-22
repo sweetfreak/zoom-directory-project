@@ -20,7 +20,7 @@ function Navbar(props) {
   return (
     <nav className="navbar">
       {!loggedIn ? (
-        <div class="space">
+        <div className="space">
           <li>
             <a href="/Signup"> Signup </a>
           </li>

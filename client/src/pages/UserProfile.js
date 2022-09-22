@@ -47,13 +47,14 @@ const UserProfile = (props) => {
 
   return (
     <center className="profile">
-      <h2>Profile</h2>
+      <h2>Profile of</h2>
       <h1>Clark Kent</h1>
       <div className="user-Front-container">
-        <li>Title: Digital Marketer</li>
-        <li>Department: Advertising</li>
-        <li>Team: Digital</li>
-        <li>Manager: Perry White</li>
+
+        <li><span className="bold-word">Title:</span> Digital Marketer</li>
+        <li><span className="bold-word">Department:</span> Advertising</li>
+        <li><span className="bold-word">Team:</span> Digital</li>
+        <li><span className="bold-word">Manager:</span> Perry White</li>
       </div>
       <br />
       <li>
@@ -68,9 +69,10 @@ const UserProfile = (props) => {
       <br />
       {/* {currentUser.rank === 1 && ( */}
       <div className="user-Back-container">
-        <li>Salary: 90000 </li>
-        <li>Employee Start Data: 11/11/2011 </li>
-        <li>Employee ID: 10001</li>
+        <h4>Upper Management Information</h4>
+        <li><span className="bold-word">Salary:</span> 90000 </li>
+        <li><span className="bold-word">Employee Start Data:</span> 11/11/2011 </li>
+        <li><span className="bold-word">Employee ID:</span> 10001</li>
       </div>
       <br />
       <button onClick={handleClick}>Update Info</button>

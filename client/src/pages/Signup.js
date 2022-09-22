@@ -77,7 +77,7 @@ const SignupForm = () => {
           <h1>Signup Page</h1>
 
           <Form.Group>
-            <img src={email} alt="email" className="credential" />
+            <img src={email} alt="email" className="credential formInput" />
             <Form.Control
               type="email"
               placeholder="Your email address"
@@ -93,7 +93,7 @@ const SignupForm = () => {
           </Form.Group>
           <br />
           <Form.Group>
-            <img src={password} alt="password" className="credential" />
+            <img src={password} alt="password" className="credential formInput" />
             <Form.Control
               type="password"
               placeholder="Your password"
@@ -131,6 +131,7 @@ const SignupForm = () => {
             }
             type="submit"
             variant="success"
+            className="submit-btn"
           >
             Submit
           </Button>

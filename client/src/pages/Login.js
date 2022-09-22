@@ -40,10 +40,10 @@ function LoginForm(props) {
 
   return (
     <div className="container main">
-      <div className="sub-main">
-        <form onSubmit={handleFormSubmit}>
+      <div className="sub-main ">
+        <form onSubmit={handleFormSubmit} className="formInput">
           <h1>Login</h1>
-          <div className="flex-row space-between my-2">
+          <div className="flex-row space-between my-2 ">
             <img src={email} alt="email" className="credential" />
             <input
               placeholder="youremail@test.com"
@@ -55,7 +55,7 @@ function LoginForm(props) {
             />
           </div>
           <br />
-          <div className="flex-row space-between my-2">
+          <div className="flex-row space-between my-2 ">
             <img src={password} alt="password" className="credential" />
 
             <input
@@ -75,8 +75,8 @@ function LoginForm(props) {
             </div>
           ) : null}
           <br />
-          <div className="flex-row flex-end">
-            <button type="submit">Login</button>
+          <div className="flex-row flex-end ">
+            <button className="submit-btn" type="submit">Login</button>
           </div>
           <br />
           <div className="forgot-password">

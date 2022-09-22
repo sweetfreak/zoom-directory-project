@@ -28,6 +28,7 @@ html {
 
 div .banner {
   margin-bottom: 10px;
+  padding: 10px;
 }
 /*navigation bar*/
 .navbar {
@@ -35,8 +36,6 @@ div .banner {
   color: white;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
-  padding: 0 1rem;
   width: 100%;
   display: flex;
   height: 100px;
@@ -46,21 +45,22 @@ div .banner {
   display: list-item;
 }
 div .space {
-  padding: 20px;
+  padding: 40px;
   margin: 0;
   list-style: none;
   width: 100%;
   gap: 1rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   justify-content: space-between;
 }
 
 footer {
   background: #333;
-  position: absolute;
+  position: relative;
   color: white;
-  padding: 3em;
+padding: 25px 5px;
   margin-top: auto;
   width: 100%;
   bottom: 0;
@@ -88,7 +88,7 @@ footer {
   display: flex;
   justify-content: center;
   height: 550px;
-  width: 35%;
+  width: 80%;
   box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
   padding-top: 30px;
   border-radius: 60px;
@@ -169,17 +169,29 @@ input {
 /*department profile*/
 
 .card {
-  display: grid;
-  grid-template-columns: 350px 350px 350px;
-
-  justify-content: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.director-card {
+.deptCard {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 5rem;
   margin-bottom: 5rem;
+}
+
+.director-card {
+background-color: aquamarine;
+}
+
+.manager-card {
+background-color: pink;
+}
+
+.employee-card {
+background-color: lightcyan;
 }
 
 .content-card {
@@ -187,6 +199,7 @@ input {
   box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
   border-radius: 0.2rem;
   display: flex;
+  padding: 15px;
   flex-direction: column;
 
   cursor: pointer;
@@ -218,15 +231,40 @@ li {
 }
 
 .user-Front-container {
-  width: 300px;
+  width: 75%;
   padding: 40px;
   margin: 10px;
   border: 1px solid;
 }
 
 .user-Back-container {
-  width: 300px;
+  width: 75%;
   padding: 40px;
   margin: 10px;
   border: 1px solid;
 }
+
+.bold-word {
+  font-weight: bold;
+}
+
+
+
+.submit-btn {
+  width: 100%;
+}
+
+@media screen and (max-width: 500px){
+ .submit-btn {
+  width: 60%;
+ }
+
+ .formInput input {
+  width: 60%;
+} 
+
+.credential-entry  {
+  width: 60%;
+} 
+
+ }
