@@ -34,7 +34,7 @@ const typeDefs = gql`
   type Query {
     me: User1
     departments: [Sector2]
-    employee(employeeID: Int): [User1]
+    employee(employeeID: Int): User1
     deptEmployees(Sector2: String, name: String): [User1]
     allEmployees: [User1]
   }
