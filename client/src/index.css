@@ -17,6 +17,15 @@ code {
 html {
   height: 100%;
 }
+
+.site-title {
+  font-size:xx-large;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  background-color: lightblue;
+}
+
 /*navigation bar*/
 .navbar {
   background-color: rgb(61, 71, 204);
@@ -39,9 +48,12 @@ html {
 }
 footer{
   background: #333;
+  position: absolute;
   color: white;
   padding: 3em;
   margin-top: auto;
+  width: 100%;
+  bottom:0;
 }
 
 .home-details-container {
@@ -100,10 +112,27 @@ Button{
   border: none;
   cursor: pointer;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> b620a8a6a33786373a24241fdd01405b8edf9187
 Button:hover{
   background: purple;
   opacity: 0.3;
   transform: scale(.8);
   transition-duration: 0.5s;
+<<<<<<< HEAD
+=======
+}
+
+.standard {
+  display: flex
+}
+
+.home-not-logged-in {
+  text-align: center;
+  margin: 50px 0px;
+  width: 100%;
+
+>>>>>>> b620a8a6a33786373a24241fdd01405b8edf9187
 }
